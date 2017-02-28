@@ -3,14 +3,51 @@
 // Using the new Symbol primitive is an option, but you
 // can still mutate the array in different places if you wish.
 // ex.
-let _items = Symbol();
-let items = new WeakMap();
+// let _items = Symbol();
+// let items = new WeakMap();
+
+class Node {
+  constructor(data) {
+    this.data = data;
+    this.previous = null;
+  }
+
+}
+
+class StackImplementation {
+  constructor() {
+    this.top = null;
+    this.size = 0;
+  }
+
+  push(data) {
+    let node = new Node(data);
+    node.previous = this.top;
+    this.top = node;
+    this.size += 1;
+    return this.top;
+  }
+
+  pop() {
+    this.top = this.top.previous;
+    this.size -= 1;
+  }
+
+  count() {
+    console.log(this.size);
+    return this.size;
+  }
+
+  print() {
+    console.log(this.top);
+  }
+}
 
 class Stack {
 
   constructor() {
-    items.set(this, []);
-
+    this.list = new StackImplementation();
+    this.list.prototype = Object.create(new StackImplementation());
     // Creates public instance varible that can be mutated.
     // this.list = [];
 
@@ -19,9 +56,9 @@ class Stack {
   }
 
   push(element) {
+    this.items.push(element);
 
-    let s = items.get(this);
-    s.push(element);
+    // s.push(element);
 
     // Symbol Implementation
     // this[_items].push();
@@ -85,6 +122,11 @@ class Stack {
 
 }
 
+let stack = new Stack();
+stack.push('hello');
+// console.log(stack.push('push again'));
+
+
 // MUTATION OF ARRAY USING SYMBOL PRIMITIVE
 // let stack = new Stack();
 // stack.push(8);
@@ -98,81 +140,35 @@ class Stack {
 
 
 // Using a constructor function implementation.
-function StackConstructor() {
-  let items = [];
-
-  // Push element on to the stack.
-  this.push = element => {
-    items.push(element);
-  }
-
-  // remove element from the top of the stack.
-  this.pop = () => {
-    items.pop();
-  }
-
-  // Look at the last element of the stack.
-  this.peek = () => {
-    return items[items.length - 1];
-  }
-
-  // Get the size of the stack.
-  this.size = () => {
-    return items.length;
-  }
-
-  this.isEmpty = () => {
-    return arr.length === 0;
-  }
-
-  this.clear = () => {
-    items = [];
-  }
-}
-
-
-function Node(data) {
-  this.data = data;
-  this.previous = null;
-}
-
-function StackImplementation() {
-  this.top = null;
-  this.size = 0;
-}
-
-StackImplementation.prototype = {
-  push: data => {
-    let node = new Node(data);
-    node.previous = this.top;
-    this.top = node;
-    this.size += 1;
-    return this.top;
-  },
-
-  pop:() => {
-    let temp = this.top;
-    this.previous = this.top.previous;
-    this.size -= 1;
-    return temp;
-  },
-
-  size: () => {
-    return this.size;
-  },
-  
-  print: () => {
-    console.log(this.top);
-  }
-}
-
-
-var stack = new StackImplementation();
-stack.push('hello');
-stack.push('hi');
-stack.push('friend');
-stack.print();
-
-stack.pop();
-
-console.log(stack);
+// function StackConstructor() {
+//   let items = [];
+//
+//   // Push element on to the stack.
+//   this.push = element => {
+//     items.push(element);
+//   }
+//
+//   // remove element from the top of the stack.
+//   this.pop = () => {
+//     items.pop();
+//   }
+//
+//   // Look at the last element of the stack.
+//   this.peek = () => {
+//     return items[items.length - 1];
+//   }
+//
+//   // Get the size of the stack.
+//   this.size = () => {
+//     return items.length;
+//   }
+//
+//   this.isEmpty = () => {
+//     return arr.length === 0;
+//   }
+//
+//   this.clear = () => {
+//     items = [];
+//   }
+// }
+//
