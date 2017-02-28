@@ -155,12 +155,24 @@ StackImplementation.prototype = {
     this.previous = this.top.previous;
     this.size -= 1;
     return temp;
+  },
+
+  size: () => {
+    return this.size;
+  },
+  
+  print: () => {
+    console.log(this.top);
   }
 }
 
 
-let stack = new StackImplementation();
+var stack = new StackImplementation();
 stack.push('hello');
-console.log(stack.push('hi'));
-console.log(stack.pop('hi'));
+stack.push('hi');
+stack.push('friend');
+stack.print();
+
+stack.pop();
+
 console.log(stack);
