@@ -4,7 +4,7 @@
 // can still mutate the array in different places if you wish.
 // ex.
 let _items = Symbol();
-let items = WeakMap();
+let items = new WeakMap();
 
 class Stack {
 
@@ -78,7 +78,7 @@ class Stack {
   clear() {
     let s = items.get(this);
     s.push(element);
-    
+
     // Instance varible method
     // this.list = [];
   }
@@ -129,3 +129,38 @@ function StackConstructor() {
     items = [];
   }
 }
+
+
+function Node(data) {
+  this.data = data;
+  this.previous = null;
+}
+
+function StackImplementation() {
+  this.top = null;
+  this.size = 0;
+}
+
+StackImplementation.prototype = {
+  push: data => {
+    let node = new Node(data);
+    node.previous = this.top;
+    this.top = node;
+    this.size += 1;
+    return this.top;
+  },
+
+  pop:() => {
+    let temp = this.top;
+    this.previous = this.top.previous;
+    this.size -= 1;
+    return temp;
+  }
+}
+
+
+let stack = new StackImplementation();
+stack.push('hello');
+console.log(stack.push('hi'));
+console.log(stack.pop('hi'));
+console.log(stack);
