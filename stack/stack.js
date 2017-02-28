@@ -1,3 +1,5 @@
+// To-Do, ditch array and create the underlying structure.
+
 class Stack {
   constructor(list) {
     this.list = list;
