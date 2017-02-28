@@ -31,6 +31,7 @@ class StackImplementation {
   pop() {
     this.top = this.top.previous;
     this.size -= 1;
+    return this.top;
   }
 
   count() {
@@ -47,7 +48,6 @@ class Stack {
 
   constructor() {
     this.list = new StackImplementation();
-    this.list.prototype = Object.create(new StackImplementation());
     // Creates public instance varible that can be mutated.
     // this.list = [];
 
@@ -56,7 +56,8 @@ class Stack {
   }
 
   push(element) {
-    this.items.push(element);
+    this.list.push(element)
+
 
     // s.push(element);
 
@@ -69,8 +70,9 @@ class Stack {
 
   pop() {
 
-    let s = items.get(this);
-    s.pop(element);
+    this.list.pop();
+    // let s = items.get(this);
+    // s.pop(element);
 
     // Symbol Implementation
     // this[_items].pop()
@@ -93,8 +95,10 @@ class Stack {
 
   size() {
 
-    let s = items.get(this);
-    return s.length;
+    console.log(this.list.count());
+
+    // let s = items.get(this);
+    // return s.length;
 
     // Symbol Implementation
     // this[_items].length;
@@ -123,7 +127,12 @@ class Stack {
 }
 
 let stack = new Stack();
-stack.push('hello');
+stack.push('helo');
+stack.push('hello again');
+stack.push('to remove');
+stack.pop();
+stack.size()
+
 // console.log(stack.push('push again'));
 
 
