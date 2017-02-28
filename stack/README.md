@@ -5,7 +5,7 @@
 ### Summary
 Is a collection of values.  A list of values (array).  A stack is uses last in first out (LIFO). The end of the stack is called the top, the bottom is called the base.
 
-Real world Example:
+***Real world Example:***
 Think of a stack of papers. You add papers on the base, then you remove papers from the top.
 
 ```
@@ -21,9 +21,9 @@ Think of a stack of papers. You add papers on the base, then you remove papers f
 
 
 #### Methods
--[] push
--[] pop
--[] size
--[] peek
--[] isEmpty
--[] clear
+- push
+- pop
+- size
+- peek
+- isEmpty
+- clear
