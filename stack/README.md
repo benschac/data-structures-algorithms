@@ -1,5 +1,5 @@
 #Stack
-### implemented in Javascript with ES6 features.
+## Implemented in Javascript with ES6 features.
 
 
 ### Summary
