@@ -34,13 +34,21 @@ class StackImplementation {
     return this.top;
   }
 
+  peek() {
+    this.top === null ? null : this.top.data
+  }
+
+  isEmpty() {
+    this.size ? true : false
+  }
+
   count() {
     console.log(this.size);
     return this.size;
   }
 
   print() {
-    console.log(this.top);
+    console.log(this.count());
   }
 }
 
@@ -83,14 +91,18 @@ class Stack {
 
   peek() {
 
-    let s = items.get(this);
-    return s[s.length - 1];
+    // let s = items.get(this);
+    // return s[s.length - 1];
 
     // Instance varible Implementation
     // return this.list[this.list.length - 1];
 
     // Symbol Implementation
     // return this[_items][this[_items].length - 1];
+  }
+
+  print() {
+    this.list.print()
   }
 
   size() {
@@ -126,12 +138,22 @@ class Stack {
 
 }
 
-let stack = new Stack();
+let stack = new StackImplementation();
 stack.push('helo');
 stack.push('hello again');
 stack.push('to remove');
 stack.pop();
-stack.size()
+stack.print();
+stack.peek();
+
+
+
+// let stack = new Stack();
+// stack.push('helo');
+// stack.push('hello again');
+// stack.push('to remove');
+// stack.pop();
+// stack.print();
 
 // console.log(stack.push('push again'));
 
