@@ -4,7 +4,6 @@ class Node {
     this.data = data;
     this.previous = null;
   }
-
 }
 
 class StackImplementation {
@@ -82,3 +81,7 @@ class Stack {
   }
 
 }
+
+
+module.exports = Stack;
+module.exports = Node;
