@@ -1,0 +1,31 @@
+{
+  "name": "cs-challenges",
+  "version": "1.0.0",
+  "description": "This repository hosts a collection of implementations and explanations of common data structure and algorithums.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benschac/data-structures-algorithms.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/benschac/data-structures-algorithms/issues"
+  },
+  "homepage": "https://github.com/benschac/data-structures-algorithms#readme",
+  "devDependencies": {
+    "babel-jest": "^19.0.0",
+    "babel-preset-es2015": "^6.22.0",
+    "jest": "^19.0.2",
+    "regenerator-runtime": "^0.10.3"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "dependencies": {
+    "babel-preset-es2015": "^6.22.0"
+  }
+}
