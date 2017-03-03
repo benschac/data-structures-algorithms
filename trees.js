@@ -1,5 +1,7 @@
+module.exports = Node;
+
 class Node {
-  constructor(parent=null, this.left=null, this.right=null) {
+  constructor(parent=null, left=null, right=null) {
     this.parent = parent;
     this.left = left;
     this.right = right;

@@ -23,3 +23,4 @@ A tree structure is similar to a real life tree or a tree like structure.  Think
 - *levels*: Indexed at 0, each section of the tree. _Example:_ The h1 node in the HTML tree above would be at the 3rd level.
 
 ### Binary Search Tree
+Is a tree structure that has a left and right child node.
