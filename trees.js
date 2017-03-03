@@ -1,16 +1,12 @@
 module.exports = Node;
 
-class Node {
-  constructor(parent=null, left=null, right=null) {
-    this.parent = parent;
+function binarySearchTree() {
+  function Node(key) {
+    this.key = key;
     this.left = left;
     this.right = right;
   }
-}
 
 
-class Tree {
-  constructor() {
-
-  }
+  let root = null;
 }
