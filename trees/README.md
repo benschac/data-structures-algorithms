@@ -37,6 +37,12 @@ Is a tree structure that has a left and right child node. It organizes nodes sim
 
 
 #### Methods
-- *insert*:
-- *search*:
-- *delete*:
+- *insert(key)*: Insert a new node into the tree.
+- *search(key)*: Search for a node in the tree.
+- *delete(key)*: Delete a node in the tree.
+- *inorderTraverse*: Visit all nodes of the tree in order.
+- *preOrderTraverse*:
+- *postOrderTraverse*:
+- *min*: Get the smallest value in the tree.
+- *max*: Get the largest value in the tree.
+- *remove(key)*: Remove value from the tree.
