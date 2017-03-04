@@ -111,8 +111,11 @@ this.inOrderTraverse = function(cb) {
 
   2. `inOrderTraverseNode` takes a callback function `cb` to apply an action on the node. We can write a helper function and pass it into `inOrderTraverse`.
 
-- *preOrderTraverse*:
-- *postOrderTraverse*:
-- *min*: Get the smallest value in the tree.
-- *max*: Get the largest value in the tree.
-- *remove(key)*: Remove value from the tree.
+- *preOrderTraverse*: A pre-order traversal visits the node prior to its descendants.
+```javascript
+
+```
+- *postOrderTraverse*:[To-Do]
+- *min*:[To-Do] Get the smallest value in the tree.
+- *max*:[To-Do] Get the largest value in the tree.
+- *remove(key)*:[To-Do] Remove value from the tree.
