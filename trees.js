@@ -36,13 +36,29 @@ function BinarySearchTree() {
     inOrderTraverseNode(root, cb);
   }
 
-  this.postOrderTraverse = function(cb) {
+  this.preOrderTraverse = function(cb) {
 
     let preOrderTraverseNode = function(node, cb) {
-
+      if(node !== null) {
+        cb(node.key);
+        preOrderTraverseNode(node.left, cb);
+        preOrderTraverseNode(node.right, cb);
+      }
     }
 
     preOrderTraverseNode(root, cb);
+  }
+
+  this.postOrderTraverse = function(cb) {
+    let postOrderTraverseNode = function(node, cb) {
+      if(node !== null) {
+        postOrderTraverseNode(node.left, cb);
+        postOrderTraverseNode(node.right, cb);
+
+        cb(node.key);
+      }
+    }
+    postOrderTraverseNode(root, cb);
   }
 }
 
@@ -65,4 +81,4 @@ var tree = new BinarySearchTree();
 function printNode(value){ //{6}
      console.log(value);
    }
-   tree.inOrderTraverse(printNode); //{7}
+   tree.postOrderTraverse(printNode); //{7}
