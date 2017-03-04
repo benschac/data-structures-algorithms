@@ -1,13 +1,16 @@
-const Node = require('./trees');
+const binarySearchTree = require('./trees');
 
-let node;
+let tree;
 beforeEach(() => {
-  node = new Node();
+  tree = new binarySearchTree();
 });
 
 
-describe('a node', () => {
-  it('has a root node that initially is null', () => {
-    expect(node.root).toBe(null);
+describe('a tree\'s insert function', () => {
+  it('creates a new node', () => {
+    tree.insert(10);
+    expect(tree.root.key).toBe(10);
+    expect(tree.root.left).toBe(null);
+    expect(tree.root.right).toBe(null);
   });
 });

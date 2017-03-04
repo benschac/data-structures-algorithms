@@ -22,6 +22,8 @@ A tree structure is similar to a real life tree or a tree like structure.  Think
 
 - *levels*: Indexed at 0, each section of the tree. _Example:_ The h1 node in the HTML tree above would be at the 3rd level.
 
+---
+
 ### Binary Search Tree
 Is a tree structure that has a left and right child node. It organizes nodes simply from left-to-right. A node on the left is less than the parent node. The node on the right is larger than the parent.
 
@@ -34,6 +36,20 @@ Is a tree structure that has a left and right child node. It organizes nodes sim
         \
          8
 ```
+
+#### Data Structure
+- Holds Both the underlying nodes + Tree methods for manipulation and searching of the tree.
+
+#### Nodes
+```javascript
+function Node(key) {
+  this.key = key;
+  this.left = null;
+  this.right = null;
+}
+```
+- Creates fresh node object to insert into the tree.
+- Only the key value is assigned. Left and right children are assigned by a method.
 
 
 #### Methods
@@ -48,9 +64,9 @@ this.insert = function(key) {
   let insertnode = ...
 }
 ```
-- 1. Create fresh node to insert into tree.
-- 2. If there's no root, make new node root.
-- 3. Use a helper function to insert the node in the right
+1. Create fresh node to insert into tree.
+2. If there's no root, make new node root.
+3. Use a helper function to insert the node in the right
   part of the tree.
 
 - *insertNode(node, newNode) private method*:
@@ -69,15 +85,32 @@ let insertNode = function(node, newNode) {
 }
 ```
 
-- 1. If the new key is less than the old key look to the Node's left child.
+1. If the new key is less than the old key look to the Node's left child.
 
-- 2. If node left child is null, assign node's left child to the new node.  If it's not, recursively search the tree by calling insertNode again on the node.left as it's the new node parameter.
+2. If node left child is null, assign node's left child to the new node.  If it's not, recursively search the tree by calling insertNode again on the node.left as it's the new node parameter.
 
-- 3. Run the same directions with the right side of the binary tree.
+3. Run the same directions with the right side of the binary tree.
 
 - *search(key)*: Search for a node in the tree.
 - *delete(key)*: Delete a node in the tree.
-- *inorderTraverse*: Visit all nodes of the tree in order.
+- *inOrderTraverse*: Visit all nodes of the tree in order.
+
+```javascript
+this.inOrderTraverse = function(cb) {
+  let inOrderTraverseNode = function(node, cb) {
+    if(node !== null) {
+      inOrderTraverseNode(node.left, cb);
+      cb(node.key);
+      inOrderTraverseNode(node.right, cb);
+    }
+  }
+  inOrderTraverseNode(root, cb);
+}
+```
+  1. Recursively search through the tree by smallest key first.  If a value is null then you've hit your basecase.
+
+  2. `inOrderTraverseNode` takes a callback function `cb` to apply an action on the node. We can write a helper function and pass it into `inOrderTraverse`.
+
 - *preOrderTraverse*:
 - *postOrderTraverse*:
 - *min*: Get the smallest value in the tree.
