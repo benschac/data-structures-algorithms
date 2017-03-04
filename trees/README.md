@@ -38,6 +38,43 @@ Is a tree structure that has a left and right child node. It organizes nodes sim
 
 #### Methods
 - *insert(key)*: Insert a new node into the tree.
+```javascript
+this.insert = function(key) {
+  // 1.
+  let node = new Node(key);
+  // 2. and 3.
+  root === null ? root = node : insertNode(root, node);
+
+  let insertnode = ...
+}
+```
+- 1. Create fresh node to insert into tree.
+- 2. If there's no root, make new node root.
+- 3. Use a helper function to insert the node in the right
+  part of the tree.
+
+- *insertNode(node, newNode) private method*:
+```javascript
+let insertNode = function(node, newNode) {
+  // 1
+  if(newNode.key < node.key) {
+  // 2
+    node.left === null ? node.left = newNode
+    : insertNode(node.left, newNode);
+  } else {
+  // 3.
+    node.right === null ? node.right = newNode
+    : insertNode(node.right, newNode);
+  }
+}
+```
+
+- 1. If the new key is less than the old key look to the Node's left child.
+
+- 2. If node left child is null, assign node's left child to the new node.  If it's not, recursively search the tree by calling insertNode again on the node.left as it's the new node parameter.
+
+- 3. Run the same directions with the right side of the binary tree.
+
 - *search(key)*: Search for a node in the tree.
 - *delete(key)*: Delete a node in the tree.
 - *inorderTraverse*: Visit all nodes of the tree in order.

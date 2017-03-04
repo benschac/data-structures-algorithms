@@ -18,7 +18,7 @@ function binarySearchTree() {
         node.left === null ? node.left = newNode
         : insertNode(node.left, newNode);
       } else {
-        node.left === null ? node.right = newNode
+        node.right === null ? node.right = newNode
         : insertNode(node.right, newNode);
       }
     }
