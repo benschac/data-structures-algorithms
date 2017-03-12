@@ -1,8 +1,8 @@
-#Stack implemented in Javascript with ES6 features.
+#Stack -- Written in Javascript/ES6
 
 
 ### Summary
-Is a collection of values.  A list of values (array).  A [stack](https://en.wikipedia.org/wiki/Stack_(abstract_data_type)) is uses last in first out (LIFO). The end of the stack is called the top, the bottom is called the base.
+ A stack is a list of values (or an array).  A [stack](https://en.wikipedia.org/wiki/Stack_(abstract_data_type)) is uses last in first out (LIFO). The end of the stack is called the top, the bottom is called the base.
 
 ***Real world Example:***
 Think of a stack of papers. You add papers on the base, then you remove papers from the top.
@@ -18,7 +18,6 @@ Think of a stack of papers. You add papers on the base, then you remove papers f
 ```
 
 
-
 #### Methods
 - push (Add element to stack)
 - pop (Remove first element in stack)
@@ -31,7 +30,7 @@ Think of a stack of papers. You add papers on the base, then you remove papers f
 ### Implementation
 
 #### Node
-Is the underlying data store in the stack.  It holds a data value (which it gets from an argument) and a pointer to the previous node.
+A node is the underlying data store in the stack.  It holds a data value (which it gets from an argument) and a pointer to the previous node.
 
 ```javascript
 class Node {
@@ -45,7 +44,7 @@ class Node {
 #### Stack Implementation (instance variables)
 The stack is what strings together the nodes creating the structure. We can use a `this.top` and `this.size` instance variable to keep track of size and what's on top of the stack.
 
-This is the structure that's going to be used by the stack.  Additionally we could've used javascript's array, WeakMap or Symbol primitive to implement a similar structure.  
+This is the structure that's going to be used by the stack.  Additionally we could've used javascript's array, WeakMap or Symbol primitive to implement a similar structure.  I decided to create an implementation of my own to learn the concepts behind how arrays work.  Additionally, I wanted to control the methods available to the structure that would use it.
 
 
 ```javascript

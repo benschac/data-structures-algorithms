@@ -18,7 +18,7 @@ A tree structure is similar to a real life tree or a tree like structure.  Think
 
 - *external node*: is a node with out a child. (also know as a leaf).
 
-- *subtree*: A node and it's decendants.  This would be an internal node with it's children and it's childrens children.  All the way to it's external nodes.
+- *subtree*: A node and it's descendants.  This would be an internal node with it's children and it's children's children.  All the way to it's external nodes.
 
 - *levels*: Indexed at 0, each section of the tree. _Example:_ The h1 node in the HTML tree above would be at the 3rd level.
 
@@ -107,7 +107,7 @@ this.inOrderTraverse = function(cb) {
   inOrderTraverseNode(root, cb);
 }
 ```
-  1. Recursively search through the tree by smallest key first.  If a value is null then you've hit your basecase.
+  1. Recursively search through the tree by smallest key first.  If a value is null then you've hit your base-case.
 
   2. `inOrderTraverseNode` takes a callback function `cb` to apply an action on the node. We can write a helper function and pass it into `inOrderTraverse`.
 
