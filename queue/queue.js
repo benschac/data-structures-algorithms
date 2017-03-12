@@ -1,30 +1,55 @@
 'use strict';
 
+// ES6 way using WeakMap().
+
+let Queue2 = (function() {
+    const items = new WeakMap();
+
+    class Queue {
+        constructor() {
+            items.set(this, []);
+        }
+
+        enqueue(element) {
+            let q = items.get(this); 
+            q.push(element)
+        }
+
+        dequeue() {
+            
+        }
+
+    }
+
+})();
+
+
+
+// ES5'ish way using constructor functions
 function Queue() {
-    this.items = [];
-}
+    let items = [];
 
-Queue.prototype = {
-    enqueue: (item) => {
-        return this.items.push(item);
+    this.enqueue = (item) => {
+        return items.push(item);
     },
 
-    dequeue: () => {
-        return this.items.pop();
+    this.dequeue = () => {
+        return items.shift();
     },
 
-    size: () => {
-        return this.items.length; 
+    this.size = () => {
+        return items.length; 
     },
 
-    isEmpty: () => {
-        return this.items.length ? true : false;
+    this.isEmpty = () => {
+        return items.length ? true : false;
     },
 
-    front: () => {
-        return this.items[0];
+    this.front = () => {
+        return items[0];
     }
 }
+
 
 let q = new Queue();
 q.items.push('hello')
